@@ -7,11 +7,13 @@
  * # MainCtrl
  * Controller of the rmsApp
  */
-angular.module('rmsApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+angular.module('rmsApp', ['ui.bootstrap'])
+  .controller('MainCtrl', function ($scope, $modal) {
+
+        //$scope.openModal = function(){
+            alert(222)
+            var modalInstance = $modal.open({
+                templateUrl: 'views/testModal.html'
+            });
+        //}
   });
