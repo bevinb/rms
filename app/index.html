@@ -2,36 +2,50 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title>薪酬计发</title>
+    <title>人力资源服务中心</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap-select/dist/css/bootstrap-select.css" />
+    <link rel="stylesheet" href="bower_components/angular-xeditable/dist/css/xeditable.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="rmsApp">
+  <body ng-app="rmsApp" ng-controller="MainCtrl">
 
-    <header class="rsm-nav">
-      <div class="container">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Home</a></li>
-          <li><a ng-href="#">About</a></li>
-          <li><a ng-href="#">Contact</a></li>
+    <header>
+      <div class="container-fluid rsm-header clearfix">
+        <div class="pull-right">
+          <a ng-href="#">{{user.name}}</a>,
+          <a ng-href="#">退出</a>
+          <a ng-href="#">设置</a>
+        </div>
+        <h3 class="text-muted pull-left">人力资源服务中心</h3>
+      </div>
+      <div class="container-fluid rsm-nav">
+        <ul class="nav nav-tabs">
+          <li><a ng-href="#">每月计发流程</a></li>
+          <li><a ng-href="#">数据准备</a></li>
+          <li><a ng-href="#">计发流程</a></li>
+          <li class="nav-divider"></li>
+          <li><a ng-href="#">设置</a></li>
+          <li class="active"><a ng-href="#">薪酬账套</a></li>
+          <li><a ng-href="#">薪酬基础表</a></li>
+          <li><a ng-href="#">总账及成本中心</a></li>
         </ul>
-        <h3 class="text-muted">薪酬计发</h3>
       </div>
     </header>
 
-    <div ng-include="'views/main.html'" ng-controller="MainCtrl"></div>
+    <div class="container-fluid" ng-view></div>
 
     <footer class="rsm-footer">
-      <div class="container">
+      <div class="container-fluid">
         <p><span></span> &copy;2014</p>
       </div>
     </footer>
@@ -50,17 +64,26 @@
     <script src="bower_components/json3/lib/json3.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-<<<<<<< HEAD
-=======
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
->>>>>>> d506d0567245a1ac8f7374bf7bf76bf10d297396
+    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+    <script src="bower_components/restangular/dist/restangular.js"></script>
+    <script src="bower_components/jquery-html5-placeholder-shim/jquery.html5-placeholder-shim.js"></script>
+    <script src="bower_components/angular-placeholder-shim/angular-placeholder-shim.js"></script>
+    <script src="bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
+    <script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/common/controllers/main.js"></script>
-        <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+
+    <script src="scripts/services/AlertService.js"></script>
+    <script src="scripts/services/SessionStore.js"></script>
+    <script src="scripts/services/pay/PayGroup.js"></script>
+
+    <script src="scripts/controllers/MainCtrl.js"></script>
+    <script src="scripts/controllers/pay/PayGroupCtrl.js"></script>
+    <!-- endbuild -->
 </body>
 </html>

@@ -1,0 +1,28 @@
+.paygroup-panel {
+  margin-top:20px;
+  height:120px;
+  width:100%;
+  max-width:780px;
+  border:1px solid transparent;
+  .pull-left {
+    padding:20px 40px;
+  }
+  .pull-right {
+    display: none;
+
+    .btn {
+      display: block;
+      width:150px;
+      height:60px;
+      border-radius:0;
+      line-height: 60px;
+    }
+  }
+
+  &:hover {
+    border-color:#2a6496;
+    .pull-right {
+      display: block;
+    }
+  }
+}
