@@ -1,5 +1,5 @@
 <!-- 薪酬账套列表 -->
-<div ng-controller="PayGroupCtrl">
+<div>
 
     <div ng-repeat="group in groups" class="panel paygroup-panel clearfix">
         <div class="pull-left">
@@ -8,8 +8,8 @@
             <span>薪酬项目：{{group.itemsCount}}</span>
         </div>
         <div class="pull-right">
-            <a class="btn btn-info" href="#/paygroup/{{group.id}}}/items">薪酬项目</a>
-            <a class="btn btn-info" href="#/paygroup/{{group.id}}}/employee">适用员工</a>
+            <a class="btn btn-info" href="#/paygroup/{{group.id}}/items">薪酬项目</a>
+            <a class="btn btn-info" href="#/paygroup/{{group.id}}/employee">适用员工</a>
         </div>
     </div>
 
